@@ -1,0 +1,1028 @@
+{
+    "activity": {
+        "rave:act_chemicalPipeline": {
+            "prov:description": "The chemical pipeline of RAVE",
+            "prov:id": "rave:act_chemicalPipeline",
+            "prov:label": "Chemical Pipeline",
+            "prov:type": "calc:ChemicalPipeline"
+        },
+        "rave:act_classificationPipeline": {
+            "prov:description": "Spectral type classification",
+            "prov:id": "rave:act_classificationPipeline",
+            "prov:label": "Spectral Classifications",
+            "prov:type": "obs:Classification",
+            "voprov:doculink": "ApJ 200, 14, Matijevic et al. 2012"
+        },
+        "rave:act_crossmatch": {
+            "prov:description": "Crossmatch with different input catalogues",
+            "prov:id": "rave:act_crossmatch",
+            "prov:label": "Crossmatch",
+            "prov:type": "obs:Crossmatch"
+        },
+        "rave:act_dataextraction": {
+            "prov:description": "RAVE observations, data release 4",
+            "prov:endTime": "2012-05-27T17:05:00Z",
+            "prov:id": "rave:act_dataextraction",
+            "prov:label": "Data Extraction",
+            "prov:startTime": "2003-04-11T14:42:16Z",
+            "prov:type": "obs:Extraction",
+            "voprov:doculink": "RAVE DR4: Kordopatis et al. 2013, AJ, 146, Issue 5, article id. 134, pp.421-451"
+        },
+        "rave:act_distancesBinney": {
+            "prov:description": "Distance calculations by Binney",
+            "prov:id": "rave:act_distancesBinney",
+            "prov:label": "Distance calculation (Binney)",
+            "prov:type": "calc:Distances",
+            "voprov:doculink": "RAVE DR4 paper"
+        },
+        "rave:act_distancesZwitter": {
+            "prov:description": "Distance calculations by Zwitter",
+            "prov:id": "rave:act_distancesZwitter",
+            "prov:label": "Distance calculation (Zwitter)",
+            "prov:type": "calc:Distances"
+        },
+        "rave:act_irafReduction": {
+            "prov:description": "Spectrum reduction pipeline, includes sky subtraction, merging fits-slices of one field together. Performed in Italy, by Alessandro Siviero.",
+            "prov:id": "rave:act_irafReduction",
+            "prov:label": "IRAF Reduction",
+            "prov:type": "obs:Reduction"
+        },
+        "rave:act_observations": {
+            "prov:description": "RAVE observations, data release 4",
+            "prov:endTime": "2012-05-27T17:05:00Z",
+            "prov:id": "rave:act_observations",
+            "prov:label": "RAVE Observations",
+            "prov:startTime": "2003-04-11T14:42:16Z",
+            "prov:type": "obs:Observation",
+            "voprov:doculink": "RAVE DR4: Kordopatis et al. 2013, AJ, 146, Issue 5, article id. 134, pp.421-451",
+            "votype": "voprov:activityFlow"
+        },
+        "rave:act_pipeline": {
+            "prov:description": "includes the main processing steps between observations and data release",
+            "prov:id": "rave:act_pipeline",
+            "prov:label": "RAVE Pipeline",
+            "prov:type": "Pipeline",
+            "votype": "voprov:activityFlow"
+        },
+        "rave:act_sparvPipeline": {
+            "prov:description": "Radial velocity pipeline + (first) stellar parameters; version: 5.0, code: Yorick, C, IRAF, Perl, etc.",
+            "prov:id": "rave:act_sparvPipeline",
+            "prov:label": "SPARV-Pipeline",
+            "prov:type": "obs:Reduction"
+        },
+        "rave:act_stellarPipeline": {
+            "prov:description": "Stellar pipeline as described in DR4 paper",
+            "prov:id": "rave:act_stellarPipeline",
+            "prov:label": "Stellar Pipeline",
+            "prov:type": "obs:Reduction",
+            "voprov:doculink": "RAVE DR4: Kordopatis et al. 2013, AJ, 146, Issue 5, article id. 134, pp.421-451"
+        }
+    },
+    "agent": {
+        "org:rave": {
+            "custom:annotation": "RAVE project, https://www.rave-survey.org/",
+            "prov:id": "org:rave",
+            "prov:label": "RAVE organization",
+            "prov:type": "voprov:Organization"
+        },
+        "rave:Alessandro_Siviero": {
+            "prov:id": "rave:Alessandro_Siviero",
+            "prov:label": "Alessandro Siviero",
+            "prov:type": "voprov:Individual"
+        },
+        "rave:Corrado_Boeche": {
+            "prov:id": "rave:Corrado_Boeche",
+            "prov:label": "Corrado Boeche",
+            "prov:type": "voprov:Individual"
+        },
+        "rave:Gal_Matijevic": {
+            "prov:id": "rave:Gal_Matijevic",
+            "prov:label": "Gal Matijevic",
+            "prov:type": "voprov:Individual"
+        },
+        "rave:Georges_Kordopatis": {
+            "prov:id": "rave:Georges_Kordopatis",
+            "prov:label": "Georges Kordopatis",
+            "prov:type": "voprov:Individual"
+        },
+        "rave:Harry_Enke": {
+            "prov:id": "rave:Harry_Enke",
+            "prov:label": "Harry Enke",
+            "prov:type": "voprov:Individual",
+            "voprov:email": "henke@aip.de"
+        },
+        "rave:James_Binney": {
+            "prov:id": "rave:James_Binney",
+            "prov:label": "James Binney",
+            "prov:type": "voprov:Individual"
+        },
+        "rave:Tomaz_Zwitter": {
+            "prov:id": "rave:Tomaz_Zwitter",
+            "prov:label": "Tomaz Zwitter",
+            "prov:type": "voprov:Individual"
+        },
+        "rave:Ulisse_Munari": {
+            "prov:id": "rave:Ulisse_Munari",
+            "prov:label": "Ulisse Munari",
+            "prov:type": "voprov:Individual"
+        }
+    },
+    "entity": {
+        "rave:20030411_1507m23_001": {
+            "custom:datatype": "databaseRow",
+            "custom:storageLocation": "https://www.rave-surve.org/query/",
+            "prov:description": "Properties of observed star derived for this observation in RAVE DR4",
+            "prov:id": "rave:20030411_1507m23_001",
+            "prov:label": "20030411_1507m23_001",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:20121220_0752m383": {
+            "custom:datatype": "directory",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG/20121220/",
+            "prov:description": "collection of 17 original fits files for the same date, with different exposures",
+            "prov:id": "rave:20121220_0752m383",
+            "prov:label": "Dataset 20121220_0752m383",
+            "prov:type": "prov:collection",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m383I00001_fits": {
+            "custom:datatype": "image, fits",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG/20121220/0752m383I00001.fits",
+            "prov:description": "1 of 17 original fits files with different exposures",
+            "prov:id": "rave:20121220_0752m383I00001_fits",
+            "prov:label": "20121220_0752m383I00001.fits (original)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m383I00002_fits": {
+            "custom:datatype": "image",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG/20121220/0752m383I00002.fits",
+            "prov:description": "1 of 17 original fits files with different exposures",
+            "prov:id": "rave:20121220_0752m383I00002_fits",
+            "prov:label": "20121220_0752m383I00002.fits (original)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m383I00003_fits": {
+            "custom:datatype": "image",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG/20121220/0752m383I00003.fits",
+            "prov:description": "1 of 17 original fits files with different exposures",
+            "prov:id": "rave:20121220_0752m383I00003_fits",
+            "prov:label": "20121220_0752m383I00003.fits (original)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m383I00004_fits": {
+            "custom:datatype": "image",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG/20121220/0752m383I00004.fits",
+            "prov:description": "1 of 17 original fits files with different exposures",
+            "prov:id": "rave:20121220_0752m383I00004_fits",
+            "prov:label": "20121220_0752m383I00004.fits (original)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m383I00006_fits": {
+            "custom:datatype": "image",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG/20121220/0752m383I00006.fits",
+            "prov:description": "1 of 17 original fits files with different exposures",
+            "prov:id": "rave:20121220_0752m383I00006_fits",
+            "prov:label": "20121220_0752m383I00006.fits (original)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m383I00007_fits": {
+            "custom:datatype": "image",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG/20121220/0752m383I00007.fits",
+            "prov:description": "1 of 17 original fits files with different exposures",
+            "prov:id": "rave:20121220_0752m383I00007_fits",
+            "prov:label": "20121220_0752m383I00007.fits (original)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m383I00008_fits": {
+            "custom:datatype": "image",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG/20121220/0752m383I00008.fits",
+            "prov:description": "1 of 17 original fits files with different exposures",
+            "prov:id": "rave:20121220_0752m383I00008_fits",
+            "prov:label": "20121220_0752m383I00008.fits (original)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m383I00009_fits": {
+            "custom:datatype": "image",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG/20121220/0752m383I00009.fits",
+            "prov:description": "1 of 17 original fits files with different exposures",
+            "prov:id": "rave:20121220_0752m383I00009_fits",
+            "prov:label": "20121220_0752m383I00009.fits (original)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m383I00010_fits": {
+            "custom:datatype": "image",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG/20121220/0752m383I00010.fits",
+            "prov:description": "1 of 17 original fits files with different exposures",
+            "prov:id": "rave:20121220_0752m383I00010_fits",
+            "prov:label": "20121220_0752m383I00010.fits (original)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m38_rvsun_089_cont_txt": {
+            "custom:datatype": "spectrum, file",
+            "custom:storageLocation": "corvus.aip.de:/store/01/RAVE/Processing/DR4/20121220/0752m38.rvsun.089.cont.txt",
+            "prov:description": "result from SPARV pipeline for one fiber, continuum corrected spectrum",
+            "prov:id": "rave:20121220_0752m38_rvsun_089_cont_txt",
+            "prov:label": "20121220_0752m38.rvsun.089.cont.txt (sparv result)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m38_rvsun_fts": {
+            "custom:datatype": "image, fits",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE/reduced_IRAF/2012/20121220/0752m38.rvsun.fts",
+            "prov:description": "reduced",
+            "prov:id": "rave:20121220_0752m38_rvsun_fts",
+            "prov:label": "20121220_0752m38.rvsun.fts (reduced)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m38_sky_fts": {
+            "custom:datatype": "image, fits",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE/reduced_IRAF/2012/20121220/0752m38.sky.fts",
+            "prov:description": "reduced",
+            "prov:id": "rave:20121220_0752m38_sky_fts",
+            "prov:label": "20121220_0752m38.sky.fts (reduced)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:DR4_Chemical_Abundances": {
+            "custom:datatype": "databaseTable",
+            "custom:storageLocation": "https://www.rave-survey.org/project/documentation/dr4/chemical_abundances/",
+            "prov:description": "Table with chemical abundances",
+            "prov:id": "rave:DR4_Chemical_Abundances",
+            "prov:label": "Chemical Abundances",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_Classification_Matijevic": {
+            "custom:datatype": "databaseTable",
+            "custom:storageLocation": "https://www.rave-survey.org/project/documentation/dr4/classification_matijevic/",
+            "prov:description": "Table with spectral classification by Matijevic",
+            "prov:id": "rave:DR4_Classification_Matijevic",
+            "prov:label": "Classification Matijevic",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_Distances_Binney": {
+            "custom:datatype": "databaseTable",
+            "custom:storageLocation": "https://www.rave-survey.org/project/documentation/dr4/distances_binney/",
+            "prov:description": "Table with Binney distances",
+            "prov:id": "rave:DR4_Distances_Binney",
+            "prov:label": "Distances Binney",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_Distances_Zwitter": {
+            "custom:datatype": "databaseTable",
+            "custom:storageLocation": "https://www.rave-surve.org/",
+            "prov:description": "The Zwitter distances",
+            "prov:id": "rave:DR4_Distances_Zwitter",
+            "prov:label": "Distances Zwitter",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_RAVEDR4": {
+            "custom:datatype": "databaseTable",
+            "custom:storageLocation": "https://www.rave-survey.org/project/documentation/dr4/rave_dr4/",
+            "prov:description": "The main RAVE DR4 table",
+            "prov:id": "rave:DR4_RAVEDR4",
+            "prov:label": "RAVEDR4 main",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_Stellar_Parameters": {
+            "custom:datatype": "databaseTable",
+            "custom:storageLocation": "https://www.rave-survey.org/project/documentation/dr4/stellar_parameters/",
+            "prov:description": "Table with stellar_parameters",
+            "prov:id": "rave:DR4_Stellar_Parameters",
+            "prov:label": "Stellar Parameters",
+            "prov:type": "prov:collection",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_rave_2MASS": {
+            "custom:datatype": "databaseTable, catalog",
+            "custom:storageLocation": "https://www.rave-surve.org/query/",
+            "prov:description": "RAVE crossmatch with 2MASS",
+            "prov:id": "rave:DR4_rave_2MASS",
+            "prov:label": "RAVE Xmatch 2MASS",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_rave_PPMX": {
+            "custom:datatype": "databaseTable, catalog",
+            "custom:storageLocation": "https://www.rave-surve.org/query/",
+            "prov:description": "RAVE crossmatch with PPMX",
+            "prov:id": "rave:DR4_rave_PPMX",
+            "prov:label": "RAVE Xmatch PPMX",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_rave_PPMXL": {
+            "custom:datatype": "databaseTable, catalog",
+            "custom:storageLocation": "https://www.rave-surve.org/query/",
+            "prov:description": "RAVE crossmatch with PPMXL",
+            "prov:id": "rave:DR4_rave_PPMXL",
+            "prov:label": "RAVE Xmatch PPMXL",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_rave_SCS": {
+            "custom:datatype": "databaseTable, catalog",
+            "custom:storageLocation": "https://www.rave-surve.org/query/",
+            "prov:description": "RAVE crossmatch with SUPERCOSMOS",
+            "prov:id": "rave:DR4_rave_SCS",
+            "prov:label": "RAVE Xmatch SCS",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_rave_SPM4": {
+            "custom:datatype": "databaseTable, catalog",
+            "custom:storageLocation": "https://www.rave-surve.org/query/",
+            "prov:description": "RAVE crossmatch with SPM4",
+            "prov:id": "rave:DR4_rave_SPM4",
+            "prov:label": "RAVE Xmatch SPM4",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_rave_TYCHO2": {
+            "custom:datatype": "databaseTable, catalog",
+            "custom:storageLocation": "https://www.rave-surve.org/query/",
+            "prov:description": "RAVE crossmatch with TYCHO2",
+            "prov:id": "rave:DR4_rave_TYCHO2",
+            "prov:label": "RAVE Xmatch TYCHO2",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_rave_UCAC2": {
+            "custom:datatype": "databaseTable, catalog",
+            "custom:storageLocation": "https://www.rave-surve.org/query/",
+            "prov:description": "RAVE crossmatch with UCAC2",
+            "prov:id": "rave:DR4_rave_UCAC2",
+            "prov:label": "RAVE Xmatch UCAC2",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_rave_UCAC3": {
+            "custom:datatype": "databaseTable, catalog",
+            "custom:storageLocation": "https://www.rave-surve.org/query/",
+            "prov:description": "RAVE crossmatch with UCAC3",
+            "prov:id": "rave:DR4_rave_UCAC3",
+            "prov:label": "RAVE Xmatch UCAC3",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_rave_UCAC4": {
+            "custom:datatype": "databaseTable, catalog",
+            "custom:storageLocation": "https://www.rave-surve.org/query/",
+            "prov:description": "RAVE crossmatch with UCAC4",
+            "prov:id": "rave:DR4_rave_UCAC4",
+            "prov:label": "RAVE Xmatch UCAC4",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:DR4_rave_USNOB1": {
+            "custom:datatype": "databaseTable, catalog",
+            "custom:storageLocation": "https://www.rave-surve.org/query/",
+            "prov:description": "RAVE crossmatch with USNOB1",
+            "prov:id": "rave:DR4_rave_USNOB1",
+            "prov:label": "RAVE Xmatch USNOB1",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:GKStellarParameters": {
+            "custom:datatype": "directory",
+            "custom:storageLocation": "corvus.aip.de:/store/01/CATS/Kordopatis/first_2012",
+            "prov:description": "Stellar parameter output",
+            "prov:id": "rave:GKStellarParameters",
+            "prov:label": "Stellar Parameters Output",
+            "prov:type": "prov:collection",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:fits_orig": {
+            "custom:datatype": "directory",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG",
+            "prov:description": "Original RAVE DR4 fits files",
+            "prov:id": "rave:fits_orig",
+            "prov:label": "Original fits",
+            "prov:type": "prov:collection",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:irafReduced": {
+            "custom:datatype": "directory",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE/reduced_IRAF/",
+            "prov:description": "Results from first reduction pipeline, using IRAF. Collection contains directories with tar-balls of fits-files for each observation.",
+            "prov:id": "rave:irafReduced",
+            "prov:label": "Iraf reduced dataset",
+            "prov:type": "prov:collection",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:modelSpectra": {
+            "custom:datatype": "directory",
+            "custom:storageLocation": "corvus.aip.de:/store/01/RAVE/RES/Template_Padova_1st",
+            "prov:description": "Model spectra, for fitting spectra and determining parameters; see https://ui.adsabs.harvard.edu/#abs/2005A&A...442.1127M/abstract",
+            "prov:id": "rave:modelSpectra",
+            "prov:label": "Model Spectra",
+            "prov:type": "prov:collection",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:ravedr4": {
+            "custom:datatype": "database",
+            "custom:storageLocation": "https://www.rave-survey.org/project/documentation/dr4/rave_dr4/",
+            "prov:description": "The RAVE Data Release 4",
+            "prov:id": "rave:ravedr4",
+            "prov:label": "RAVE-DR4",
+            "prov:type": "prov:collection",
+            "voprov:rights": "voprov:public"
+        },
+        "rave:sparvProcessedData": {
+            "custom:datatype": "directory",
+            "custom:storageLocation": "corvus.aip.de:/store/01/RAVE/RES/Template_Padova_1st",
+            "prov:description": "Output from RAVE-SPARV pipeline, contains spectral data and stellar parameters including radial velocity",
+            "prov:id": "rave:sparvProcessedData",
+            "prov:label": "SPARV processed data set",
+            "prov:type": "prov:collection",
+            "voprov:rights": "voprov:secure"
+        },
+        "vo:2MASS": {
+            "custom:datatype": "databaseTable, catalog",
+            "prov:id": "vo:2MASS",
+            "prov:label": "2MASS",
+            "voprov:rights": "voprov:public"
+        },
+        "vo:PPMX": {
+            "custom:datatype": "databaseTable, catalog",
+            "prov:id": "vo:PPMX",
+            "prov:label": "PPMX",
+            "voprov:rights": "voprov:public"
+        },
+        "vo:PPMXL": {
+            "custom:datatype": "databaseTable, catalog",
+            "prov:id": "vo:PPMXL",
+            "prov:label": "PPMXL",
+            "voprov:rights": "voprov:public"
+        },
+        "vo:SCS": {
+            "custom:datatype": "databaseTable, catalog",
+            "prov:id": "vo:SCS",
+            "prov:label": "SCS",
+            "voprov:rights": "voprov:public"
+        },
+        "vo:SPM4": {
+            "custom:datatype": "databaseTable, catalog",
+            "prov:id": "vo:SPM4",
+            "prov:label": "SPM4",
+            "voprov:rights": "voprov:public"
+        },
+        "vo:TYCHO2": {
+            "custom:datatype": "databaseTable, catalog",
+            "prov:id": "vo:TYCHO2",
+            "prov:label": "TYCHO2",
+            "voprov:rights": "voprov:public"
+        },
+        "vo:UCAC2": {
+            "custom:datatype": "databaseTable, catalog",
+            "prov:id": "vo:UCAC2",
+            "prov:label": "UCAC2",
+            "voprov:rights": "voprov:public"
+        },
+        "vo:UCAC3": {
+            "custom:datatype": "databaseTable, catalog",
+            "prov:id": "vo:UCAC3",
+            "prov:label": "UCAC3",
+            "voprov:rights": "voprov:public"
+        },
+        "vo:UCAC4": {
+            "custom:datatype": "databaseTable, catalog",
+            "prov:id": "vo:UCAC4",
+            "prov:label": "UCAC4",
+            "voprov:rights": "voprov:public"
+        },
+        "vo:USNOB1": {
+            "custom:datatype": "databaseTable, catalog",
+            "prov:id": "vo:USNOB1",
+            "prov:label": "USNOB1",
+            "voprov:rights": "voprov:public"
+        }
+    },
+    "hadMember": {
+        "_:0": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_RAVEDR4"
+        },
+        "_:1": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_Stellar_Parameters"
+        },
+        "_:11": {
+            "prov:collection": "rave:GKStellarParameters",
+            "prov:entity": "rave:DR4_Stellar_Parameters"
+        },
+        "_:12": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_rave_SCS"
+        },
+        "_:13": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_rave_2MASS"
+        },
+        "_:14": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_rave_PPMX"
+        },
+        "_:15": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_rave_PPMXL"
+        },
+        "_:16": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_rave_SPM4"
+        },
+        "_:17": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_rave_TYCHO2"
+        },
+        "_:18": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_rave_UCAC2"
+        },
+        "_:19": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_rave_UCAC3"
+        },
+        "_:2": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_Chemical_Abundances"
+        },
+        "_:20": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_rave_UCAC4"
+        },
+        "_:21": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_rave_USNOB1"
+        },
+        "_:23": {
+            "prov:collection": "rave:DR4_RAVEDR4",
+            "prov:entity": "rave:20030411_1507m23_001"
+        },
+        "_:3": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_Distances_Binney"
+        },
+        "_:4": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_Classification_Matijevic"
+        },
+        "_:5": {
+            "prov:collection": "rave:ravedr4",
+            "prov:entity": "rave:DR4_Distances_Zwitter"
+        }
+    },
+    "prefix": {
+        "custom": "http://www.ivoa.net/documents/ProvenanceDM/ns/custom/",
+        "org": "http://www.ivoa.net/documents/ProvenanceDM/ns/org/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "rave": "http://www.rave-survey.org/prov/",
+        "vo": "http://www.ivoa.net/documents/ProvenanceDM/ns/vo",
+        "voprov": "http://www.ivoa.net/documents/ProvenanceDM/ns/voprov/",
+        "xsd": "http://www.w3.org/2000/10/XMLSchema#"
+    },
+    "used": {
+        "_:0": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:fits_orig"
+        },
+        "_:1": {
+            "prov:activity": "rave:act_sparvPipeline",
+            "prov:entity": "rave:irafReduced"
+        },
+        "_:10": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "rave:sparvProcessedData"
+        },
+        "_:11": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "vo:SCS"
+        },
+        "_:12": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "vo:2MASS"
+        },
+        "_:13": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "vo:PPMX"
+        },
+        "_:14": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "vo:PPMXL"
+        },
+        "_:15": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "vo:SPM4"
+        },
+        "_:16": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "vo:TYCHO2"
+        },
+        "_:17": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "vo:UCAC2"
+        },
+        "_:18": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "vo:UCAC3"
+        },
+        "_:19": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "vo:UCAC4"
+        },
+        "_:2": {
+            "prov:activity": "rave:act_sparvPipeline",
+            "prov:entity": "rave:modelSpectra"
+        },
+        "_:20": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "vo:USNOB1"
+        },
+        "_:21": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:sparvProcessedData"
+        },
+        "_:22": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:GKStellarParameters"
+        },
+        "_:23": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_Classification_Matijevic"
+        },
+        "_:24": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_Chemical_Abundances"
+        },
+        "_:25": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_Distances_Binney"
+        },
+        "_:26": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_Distances_Zwitter"
+        },
+        "_:27": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_rave_SCS"
+        },
+        "_:28": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_rave_2MASS"
+        },
+        "_:29": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_rave_PPMX"
+        },
+        "_:3": {
+            "prov:activity": "rave:act_stellarPipeline",
+            "prov:entity": "rave:sparvProcessedData"
+        },
+        "_:30": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_rave_PPMXL"
+        },
+        "_:31": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_rave_SPM4"
+        },
+        "_:32": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_rave_TYCHO2"
+        },
+        "_:33": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_rave_UCAC2"
+        },
+        "_:34": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_rave_UCAC3"
+        },
+        "_:35": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_rave_UCAC4"
+        },
+        "_:36": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_rave_USNOB1"
+        },
+        "_:37": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:20121220_0752m383I00001_fits",
+            "prov:role": "raw image"
+        },
+        "_:38": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:20121220_0752m383I00002_fits",
+            "prov:role": "raw image"
+        },
+        "_:39": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:20121220_0752m383I00003_fits",
+            "prov:role": "raw image"
+        },
+        "_:4": {
+            "prov:activity": "rave:act_classificationPipeline",
+            "prov:entity": "rave:sparvProcessedData"
+        },
+        "_:40": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:20121220_0752m383I00004_fits",
+            "prov:role": "raw image"
+        },
+        "_:41": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:20121220_0752m383",
+            "prov:role": "raw images"
+        },
+        "_:42": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:20121220_0752m383I00006_fits",
+            "prov:role": "raw image"
+        },
+        "_:43": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:20121220_0752m383I00007_fits",
+            "prov:role": "raw image"
+        },
+        "_:44": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:20121220_0752m383I00008_fits",
+            "prov:role": "raw image"
+        },
+        "_:45": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:20121220_0752m383I00009_fits",
+            "prov:role": "raw image"
+        },
+        "_:46": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:20121220_0752m383I00010_fits",
+            "prov:role": "raw image"
+        },
+        "_:47": {
+            "prov:activity": "rave:act_sparvPipeline",
+            "prov:entity": "rave:20121220_0752m38_rvsun_fts",
+            "prov:role": "reduced spectrum"
+        },
+        "_:48": {
+            "prov:activity": "rave:act_sparvPipeline",
+            "prov:entity": "rave:20121220_0752m38_sky_fts",
+            "prov:role": "sky image"
+        },
+        "_:49": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:20121220_0752m38_rvsun_089_cont_txt",
+            "prov:role": "continuum subtracted spectrum"
+        },
+        "_:5": {
+            "prov:activity": "rave:act_chemicalPipeline",
+            "prov:entity": "rave:sparvProcessedData"
+        },
+        "_:6": {
+            "prov:activity": "rave:act_chemicalPipeline",
+            "prov:entity": "rave:GKStellarParameters"
+        },
+        "_:7": {
+            "prov:activity": "rave:act_distancesBinney",
+            "prov:entity": "rave:GKStellarParameters"
+        },
+        "_:8": {
+            "prov:activity": "rave:act_distancesBinney",
+            "prov:entity": "rave:sparvProcessedData"
+        },
+        "_:9": {
+            "prov:activity": "rave:act_distancesZwitter",
+            "prov:entity": "rave:sparvProcessedData"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:1": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:agent": "rave:Alessandro_Siviero"
+        },
+        "_:2": {
+            "prov:activity": "rave:act_sparvPipeline",
+            "prov:agent": "rave:Harry_Enke"
+        },
+        "_:3": {
+            "prov:activity": "rave:act_stellarPipeline",
+            "prov:agent": "rave:Georges_Kordopatis"
+        },
+        "_:4": {
+            "prov:activity": "rave:act_classificationPipeline",
+            "prov:agent": "rave:Gal_Matijevic",
+            "prov:role": "software_developer"
+        },
+        "_:5": {
+            "prov:activity": "rave:act_chemicalPipeline",
+            "prov:agent": "rave:Corrado_Boeche"
+        },
+        "_:6": {
+            "prov:activity": "rave:act_distancesBinney",
+            "prov:agent": "rave:James_Binney"
+        },
+        "_:7": {
+            "prov:activity": "rave:act_distancesZwitter",
+            "prov:agent": "rave:Tomaz_Zwitter"
+        },
+        "_:8": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:agent": "rave:Harry_Enke"
+        },
+        "_:9": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:agent": "rave:Harry_Enke"
+        }
+    },
+    "wasAttributedTo": {
+        "_:0": {
+            "prov:agent": "org:rave",
+            "prov:entity": "rave:fits_orig"
+        },
+        "_:2": {
+            "prov:agent": "rave:Ulisse_Munari",
+            "prov:entity": "rave:modelSpectra",
+            "voprov:role": "first author on paper"
+        },
+        "_:3": {
+            "prov:agent": "org:rave",
+            "prov:entity": "rave:GKStellarParameters"
+        },
+        "_:4": {
+            "prov:agent": "org:rave",
+            "prov:entity": "rave:DR4_Classification_Matijevic"
+        },
+        "_:5": {
+            "prov:agent": "org:rave",
+            "prov:entity": "rave:DR4_Chemical_Abundances"
+        },
+        "_:6": {
+            "prov:agent": "org:rave",
+            "prov:entity": "rave:DR4_Distances_Binney"
+        },
+        "_:7": {
+            "prov:agent": "org:rave",
+            "prov:entity": "rave:DR4_Distances_Zwitter"
+        }
+    },
+    "wasDerivedFrom": {
+        "_:0": {
+            "prov:generatedEntity": "rave:irafReduced",
+            "prov:usedEntity": "rave:fits_orig"
+        },
+        "_:1": {
+            "prov:generatedEntity": "rave:sparvProcessedData",
+            "prov:usedEntity": "rave:irafReduced"
+        },
+        "_:2": {
+            "prov:generatedEntity": "rave:GKStellarParameters",
+            "prov:usedEntity": "rave:sparvProcessedData"
+        },
+        "_:3": {
+            "prov:generatedEntity": "rave:DR4_Classification_Matijevic",
+            "prov:usedEntity": "rave:sparvProcessedData"
+        },
+        "_:4": {
+            "prov:generatedEntity": "rave:DR4_Chemical_Abundances",
+            "prov:usedEntity": "rave:DR4_Stellar_Parameters"
+        },
+        "_:5": {
+            "prov:generatedEntity": "rave:DR4_Distances_Zwitter",
+            "prov:usedEntity": "rave:sparvProcessedData"
+        },
+        "_:7": {
+            "prov:generatedEntity": "rave:DR4_RAVEDR4",
+            "prov:usedEntity": "rave:sparvProcessedData"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:1": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:irafReduced"
+        },
+        "_:10": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "rave:DR4_rave_PPMX"
+        },
+        "_:11": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "rave:DR4_rave_PPMXL"
+        },
+        "_:12": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "rave:DR4_rave_SPM4"
+        },
+        "_:13": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "rave:DR4_rave_TYCHO2"
+        },
+        "_:14": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "rave:DR4_rave_UCAC2"
+        },
+        "_:15": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "rave:DR4_rave_UCAC3"
+        },
+        "_:16": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "rave:DR4_rave_UCAC4"
+        },
+        "_:17": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "rave:DR4_rave_USNOB1"
+        },
+        "_:18": {
+            "prov:activity": "rave:act_dataextraction",
+            "prov:entity": "rave:DR4_RAVEDR4"
+        },
+        "_:2": {
+            "prov:activity": "rave:act_sparvPipeline",
+            "prov:entity": "rave:sparvProcessedData"
+        },
+        "_:29": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:20121220_0752m38_rvsun_fts"
+        },
+        "_:3": {
+            "prov:activity": "rave:act_stellarPipeline",
+            "prov:entity": "rave:GKStellarParameters"
+        },
+        "_:30": {
+            "prov:activity": "rave:act_irafReduction",
+            "prov:entity": "rave:20121220_0752m38_sky_fts"
+        },
+        "_:31": {
+            "prov:activity": "rave:act_sparvPipeline",
+            "prov:entity": "rave:20121220_0752m38_rvsun_089_cont_txt"
+        },
+        "_:33": {
+            "prov:activity": "rave:act_observations",
+            "prov:entity": "rave:fits_orig"
+        },
+        "_:4": {
+            "prov:activity": "rave:act_classificationPipeline",
+            "prov:entity": "rave:DR4_Classification_Matijevic"
+        },
+        "_:5": {
+            "prov:activity": "rave:act_chemicalPipeline",
+            "prov:entity": "rave:DR4_Chemical_Abundances"
+        },
+        "_:6": {
+            "prov:activity": "rave:act_distancesBinney",
+            "prov:entity": "rave:DR4_Distances_Binney"
+        },
+        "_:7": {
+            "prov:activity": "rave:act_distancesZwitter",
+            "prov:entity": "rave:DR4_Distances_Zwitter"
+        },
+        "_:8": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "rave:DR4_rave_SCS"
+        },
+        "_:9": {
+            "prov:activity": "rave:act_crossmatch",
+            "prov:entity": "rave:DR4_rave_2MASS"
+        }
+    },
+    "wasInfluencedBy": {
+        "_:0": {
+            "prov:influencee": "rave:act_pipeline",
+            "prov:influencer": "rave:act_sparvPipeline",
+            "votype": "voprov:hadStep"
+        },
+        "_:1": {
+            "prov:influencee": "rave:act_pipeline",
+            "prov:influencer": "rave:act_irafReduction",
+            "votype": "voprov:hadStep"
+        },
+        "_:2": {
+            "prov:influencee": "rave:act_pipeline",
+            "prov:influencer": "rave:act_chemicalPipeline",
+            "votype": "voprov:hadStep"
+        },
+        "_:3": {
+            "prov:influencee": "rave:act_pipeline",
+            "prov:influencer": "rave:act_stellarPipeline",
+            "votype": "voprov:hadStep"
+        },
+        "_:4": {
+            "prov:influencee": "rave:act_pipeline",
+            "prov:influencer": "rave:act_distancesZwitter",
+            "votype": "voprov:hadStep"
+        },
+        "_:5": {
+            "prov:influencee": "rave:act_pipeline",
+            "prov:influencer": "rave:act_distancesBinney",
+            "votype": "voprov:hadStep"
+        },
+        "_:6": {
+            "prov:influencee": "rave:act_pipeline",
+            "prov:influencer": "rave:act_dataextraction",
+            "votype": "voprov:hadStep"
+        },
+        "_:7": {
+            "prov:influencee": "rave:act_pipeline",
+            "prov:influencer": "rave:act_classificationPipeline",
+            "votype": "voprov:hadStep"
+        }
+    },
+    "wasInformedBy": {
+        "_:0": {
+            "prov:informant": "rave:act_irafReduction",
+            "prov:informed": "rave:act_sparvPipeline"
+        },
+        "_:1": {
+            "prov:informant": "rave:act_sparvPipeline",
+            "prov:informed": "rave:act_stellarPipeline"
+        }
+    }
+}

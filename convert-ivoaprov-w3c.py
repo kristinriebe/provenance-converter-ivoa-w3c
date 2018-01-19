@@ -5,6 +5,7 @@ from pprint import pprint
 """
 A simple converter from IVOA to W3C compatible provenance
 serialization (PROV-JSON format).
+
 This currently probably only works with serializations
 extracted from the ProvDAL prototype at
 https://escience.aip.de/provenance-rave/prov_vo/provdal/
@@ -13,6 +14,10 @@ https://escience.aip.de/provenance-rave/prov_vo/provdal/
 It is not complete, i.e. not all classes and attributes
 are converted (yet), but at least you will get a warning
 for each class that cannot be mapped.
+
+Does not deal with value conversions at all (yet).
+
+Kristin Riebe, AIP, January 2018
 """
 
 # Here is a simple dictionary for mapping provenance attribute names,
@@ -114,12 +119,15 @@ def main():
 
     filename = args.filename
     outfilename = filename.replace('.json', '-w3c.json')
-    print('Reading file %s.' % outfilename)
 
+    # load the data
+    print('Reading file %s.' % outfilename)
     vo_data = json.load(open(filename))
 
     w3c_data = {}
-    for classname, vo_instances in vo_data.items():
+    for classname in vo_data:
+
+        # check if we need to rename the class
         class_votype = None
         class_type = None
         if classname in CLASS_MAPPING:
@@ -131,33 +139,40 @@ def main():
         else:
             # class name does not need to be changed
             w3c_classname = classname
-        w3c_instances = {}
+
+        # Check if the class already exists in w3c_data
+        # e.g. because class name was mapped to another existing class
+        if w3c_classname in w3c_data:
+            pass
+        else:
+            w3c_data[w3c_classname] = {}
+
+        # map attributes, if available
         if w3c_classname in ATTRIBUTE_MAPPING:
-            for vo_instance, attributes in vo_instances.items():
-                w3c_instance = {}
-                for vo_name, value in attributes.items():
+            for instance in vo_data[classname]:
+                w3c_data[w3c_classname][instance] = {}
+                for vo_name in vo_data[classname][instance]:
                     if vo_name in ATTRIBUTE_MAPPING[w3c_classname]:
                         w3c_name = ATTRIBUTE_MAPPING[w3c_classname][vo_name]
                     else:
                         w3c_name = vo_name
-                    w3c_instance[w3c_name] = value
+
+                    w3c_data[w3c_classname][instance][w3c_name] = vo_data[classname][instance][vo_name] # TODO: Should use a converted value, if needed!
+
+                # add type or votype, if classname was mapped:
                 if class_votype:
-                    w3c_instance['votype'] = class_votype  # TODO: check, if votype already exists!
+                    w3c_data[w3c_classname][instance]['votype'] = class_votype  # TODO: check, if votype already exists!
                 if class_type:
-                    w3c_instance['type'] = class_type  # TODO: BE CAREFUL: This may overwrite already existing type values!
-                w3c_instances[vo_instance] = w3c_instance
+                    w3c_data[w3c_classname][instance]['type'] = class_type  # TODO: BE CAREFUL: This may overwrite already existing type values!
             # check if dict-entry for this possibly mapped classname already exists, then append, else just add
-            if w3c_classname in w3c_data:
-                w3c_data[w3c_classname].update(w3c_instances)
-            else:
-                w3c_data[w3c_classname] = w3c_instances
         else:
             # Assume, that no special mapping is needed, just copy everything
             print("Warning: No mapping found for class %s. Will just assume that no conversion is needed and copy everything." % classname)
-            w3c_data[classname] = vo_instances
+            w3c_data[classname] = vo_data[classname]
 
+    # write to json file
     with open(outfilename, 'w') as outfile:
-       json.dump(w3c_data, outfile, indent=4)
+       json.dump(w3c_data, outfile, indent=4, sort_keys=True)
 
     print('Provenance metadata were converted to W3C compatible serialization and exported as PROV-JSON to %s.' % outfilename)
 
