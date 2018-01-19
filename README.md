@@ -3,5 +3,5 @@ This is very preliminary, just a proof of concept.
 
 ## Example:
 
-`convert-to-w3c.py example-ivoa.json`
+`python3 convert-to-w3c.py example-ivoa.json`
 
