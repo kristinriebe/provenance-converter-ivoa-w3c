@@ -89,8 +89,18 @@ ATTRIBUTE_MAPPING = {
     'wasInformedBy': {
         'voprov:informed': 'prov:informed',
         'voprov:informant': 'prov:informant'
+    },
+    'parameter': {
+        'voprov:id': 'prov:id',
+        'voprov:value': 'prov:value',
+        'voprov:description': 'voprov:description', # keep id of description for better backwards-conversion
+        # ParameterDescription attributes:
+        'voprov:name': 'prov:label',
+        'voprov:annotation': 'prov:description',
+        # remaining attributes stay the same
     }
-    # TODO: mapping for parameters and descriptions!
+
+    # TODO: mapping for descriptions!
 }
 
 # Some classes need to be rewritten as well
@@ -108,7 +118,16 @@ CLASS_MAPPING = {
     'collection': {
         'w3c_class': 'entity',
         'type': 'prov:collection'
+    },
+    'parameter': {
+        'w3c_class': 'entity',
+        'votype': 'voprov:parameter'
     }
+#    'parameterDescription': {
+#        'w3c_class': 'parameter',
+#        'votype': 'voprov:parameter'
+#    }
+
 }
 
 def main():
@@ -161,10 +180,9 @@ def main():
 
                 # add type or votype, if classname was mapped:
                 if class_votype:
-                    w3c_data[w3c_classname][instance]['votype'] = class_votype  # TODO: check, if votype already exists!
+                    w3c_data[w3c_classname][instance]['voprov:votype'] = class_votype  # TODO: check, if votype already exists!
                 if class_type:
-                    w3c_data[w3c_classname][instance]['type'] = class_type  # TODO: BE CAREFUL: This may overwrite already existing type values!
-            # check if dict-entry for this possibly mapped classname already exists, then append, else just add
+                    w3c_data[w3c_classname][instance]['prov:type'] = class_type  # TODO: BE CAREFUL: This may overwrite already existing type values!
         else:
             # Assume, that no special mapping is needed, just copy everything
             print("Warning: No mapping found for class %s. Will just assume that no conversion is needed and copy everything." % classname)
