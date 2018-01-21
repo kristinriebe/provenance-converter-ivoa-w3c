@@ -1,5 +1,6 @@
 Simple script for converting from IVOA to W3C provenance serializations.
 This is very preliminary, just a proof of concept.
+The code is neither complete, nor optimized in any way.
 
 ## Example:
 

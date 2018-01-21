@@ -17,6 +17,8 @@ for each class that cannot be mapped.
 
 Does not deal with value conversions at all (yet).
 
+**This code is not complete and not optimized in any way.**
+
 Kristin Riebe, AIP, January 2018
 """
 
@@ -48,11 +50,13 @@ ATTRIBUTE_MAPPING = {
         'voprov:name': 'prov:label',
         'voprov:type': 'prov:type', # possibly also adjust the values! (prov:entity, prov:collection)
         'voprov:annotation': 'prov:description',
+        'voprov:value': 'prov:value',   # for parameters
     },
     'agent': {
         'voprov:id': 'prov:id',
         'voprov:name': 'prov:label',
         'voprov:type': 'prov:type', # TODO: also adjust the values!!
+        'voprov:annotation': 'prov:description',
     },
     'used': {
         'voprov:activity': 'prov:activity',
@@ -89,18 +93,9 @@ ATTRIBUTE_MAPPING = {
     'wasInformedBy': {
         'voprov:informed': 'prov:informed',
         'voprov:informant': 'prov:informant'
-    },
-    'parameter': {
-        'voprov:id': 'prov:id',
-        'voprov:value': 'prov:value',
-        'voprov:description': 'voprov:description', # keep id of description for better backwards-conversion
-        # ParameterDescription attributes:
-        'voprov:name': 'prov:label',
-        'voprov:annotation': 'prov:description',
-        # remaining attributes stay the same
     }
-
     # TODO: mapping for descriptions!
+    # 2-step process? 1.: combine descriptions with main class, 2.: convert to w3c
 }
 
 # Some classes need to be rewritten as well
@@ -123,11 +118,6 @@ CLASS_MAPPING = {
         'w3c_class': 'entity',
         'votype': 'voprov:parameter'
     }
-#    'parameterDescription': {
-#        'w3c_class': 'parameter',
-#        'votype': 'voprov:parameter'
-#    }
-
 }
 
 def main():
@@ -143,8 +133,11 @@ def main():
     print('Reading file %s.' % outfilename)
     vo_data = json.load(open(filename))
 
+    num_param = 0
     w3c_data = {}
     for classname in vo_data:
+
+        print('- parsing and converting ', classname)
 
         # check if we need to rename the class
         class_votype = None
@@ -159,12 +152,14 @@ def main():
             # class name does not need to be changed
             w3c_classname = classname
 
+
         # Check if the class already exists in w3c_data
         # e.g. because class name was mapped to another existing class
         if w3c_classname in w3c_data:
             pass
         else:
-            w3c_data[w3c_classname] = {}
+            if classname != 'parameterDescription':
+                w3c_data[w3c_classname] = {}
 
         # map attributes, if available
         if w3c_classname in ATTRIBUTE_MAPPING:
@@ -183,10 +178,42 @@ def main():
                     w3c_data[w3c_classname][instance]['voprov:votype'] = class_votype  # TODO: check, if votype already exists!
                 if class_type:
                     w3c_data[w3c_classname][instance]['prov:type'] = class_type  # TODO: BE CAREFUL: This may overwrite already existing type values!
+
+                # if this is a parameter class, look for corresponding ParameterDescription!
+                # and copy the attributes here (except id of the parameterDescription)
+                if classname == 'parameter':
+                    num_param += 1
+
+                    description_id = vo_data[classname][instance]['voprov:description']
+                    for vo_name in vo_data['parameterDescription'][description_id]:
+                        if vo_name != 'voprov:id':
+                            if vo_name in ATTRIBUTE_MAPPING[w3c_classname]:
+                                w3c_name = ATTRIBUTE_MAPPING[w3c_classname][vo_name]
+                            else:
+                                w3c_name = vo_name
+
+                            w3c_data[w3c_classname][instance][w3c_name] = vo_data['parameterDescription'][description_id][vo_name] # TODO: Should use a converted value, if needed!
+
+                    # now also need a 'used' link from parameter-entity to its activity
+                    activity_id = vo_data[classname][instance]['voprov:activity']
+                    if 'used' not in w3c_data:
+                        w3c_data['used'] = {}
+                    # - construct an id
+                    used_id = '_:p%s' % num_param
+                    w3c_data['used'][used_id] = {}
+                    w3c_data['used'][used_id]['prov:activity'] = activity_id
+                    w3c_data['used'][used_id]['prov:entity'] = instance
+                    w3c_data['used'][used_id]['prov:role'] = 'voprov:parameter'
+
         else:
             # Assume, that no special mapping is needed, just copy everything
-            print("Warning: No mapping found for class %s. Will just assume that no conversion is needed and copy everything." % classname)
-            w3c_data[classname] = vo_data[classname]
+            if classname == 'parameterDescription':
+                # skip it
+                print("  - skipping parameterDescription, because it's included in parameter entity instead")
+                pass
+            else:
+                print("   Warning: No mapping found for class %s. Will just assume that no conversion is needed and copy everything." % classname)
+                w3c_data[classname] = vo_data[classname]
 
     # write to json file
     with open(outfilename, 'w') as outfile:
