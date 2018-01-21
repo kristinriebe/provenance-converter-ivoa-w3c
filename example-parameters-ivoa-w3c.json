@@ -1,0 +1,130 @@
+{
+    "activity": {
+        "rave:act_observation_UK-SCHM_20121220_143027": {
+            "prov:description": "observation within RAVE project",
+            "prov:endTime": "2012-12-20T14:30:27Z",
+            "prov:id": "rave:act_observation_UK-SCHM_20121220_143027",
+            "prov:label": "RAVE Observation UK-SCHM_20121220.143027",
+            "prov:startTime": "2012-12-20T14:30:27Z",
+            "prov:type": "obs:Observation"
+        },
+        "rave:act_observations": {
+            "prov:description": "RAVE observations, data release 4",
+            "prov:endTime": "2012-05-27T17:05:00Z",
+            "prov:id": "rave:act_observations",
+            "prov:label": "RAVE Observations",
+            "prov:startTime": "2003-04-11T14:42:16Z",
+            "prov:type": "obs:Observation",
+            "voprov:doculink": "RAVE DR4: Kordopatis et al. 2013, AJ, 146, Issue 5, article id. 134, pp.421-451",
+            "voprov:votype": "voprov:activityFlow"
+        }
+    },
+    "agent": {
+        "org:rave": {
+            "prov:description": "RAVE project, https://www.rave-survey.org/",
+            "prov:id": "org:rave",
+            "prov:label": "RAVE organization",
+            "prov:type": "voprov:Organization"
+        }
+    },
+    "entity": {
+        "rave:20121220_0752m383": {
+            "custom:datatype": "directory",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG/20121220/",
+            "prov:description": "collection of 17 original fits files for the same date, with different exposures",
+            "prov:id": "rave:20121220_0752m383",
+            "prov:label": "Dataset 20121220_0752m383",
+            "prov:type": "prov:collection",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:20121220_0752m383I00001_fits": {
+            "custom:datatype": "image, fits",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG/20121220/0752m383I00001.fits",
+            "prov:description": "1 of 17 original fits files with different exposures",
+            "prov:id": "rave:20121220_0752m383I00001_fits",
+            "prov:label": "20121220_0752m383I00001.fits (original)",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:fits_orig": {
+            "custom:datatype": "directory",
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG",
+            "prov:description": "Original RAVE DR4 fits files",
+            "prov:id": "rave:fits_orig",
+            "prov:label": "Original fits",
+            "prov:type": "prov:collection",
+            "voprov:rights": "voprov:secure"
+        },
+        "rave:par_obs_value1": {
+            "prov:description": "Exposure time",
+            "prov:id": "rave:par_obs_value1",
+            "prov:label": "exposure_time",
+            "prov:value": "2.999910E+02",
+            "voprov:activity": "rave:act_observation_UK-SCHM_20121220_143027",
+            "voprov:arraysize": "1",
+            "voprov:datatype": "float",
+            "voprov:description": "rave:obs_exposuretime",
+            "voprov:ucd": "time.duration;obs.exposure",
+            "voprov:unit": "sec",
+            "voprov:votype": "voprov:parameter"
+        }
+    },
+    "hadMember": {
+        "_:27": {
+            "prov:collection": "rave:fits_orig",
+            "prov:entity": "rave:20121220_0752m383"
+        },
+        "_:28": {
+            "prov:collection": "rave:20121220_0752m383",
+            "prov:entity": "rave:20121220_0752m383I00001_fits"
+        }
+    },
+    "prefix": {
+        "custom": "http://www.ivoa.net/documents/ProvenanceDM/ns/custom/",
+        "org": "http://www.ivoa.net/documents/ProvenanceDM/ns/org/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "rave": "http://www.rave-survey.org/prov/",
+        "vo": "http://www.ivoa.net/documents/ProvenanceDM/ns/vo",
+        "voprov": "http://www.ivoa.net/documents/ProvenanceDM/ns/voprov/",
+        "xsd": "http://www.w3.org/2000/10/XMLSchema#"
+    },
+    "used": {
+        "_:p0": {
+            "prov:activity": "rave:act_observation_UK-SCHM_20121220_143027",
+            "prov:entity": "rave:par_obs_value1",
+            "prov:role": "voprov:parameter"
+        }
+    },
+    "wasAssociatedWith": {
+        "_:0": {
+            "prov:activity": "rave:act_observations",
+            "prov:agent": "org:rave"
+        }
+    },
+    "wasAttributedTo": {
+        "_:0": {
+            "prov:agent": "org:rave",
+            "prov:entity": "rave:fits_orig"
+        }
+    },
+    "wasGeneratedBy": {
+        "_:0": {
+            "prov:activity": "rave:act_observations",
+            "prov:entity": "rave:20121220_0752m383"
+        },
+        "_:19": {
+            "prov:activity": "rave:act_observation_UK-SCHM_20121220_143027",
+            "prov:entity": "rave:20121220_0752m383I00001_fits"
+        },
+        "_:33": {
+            "prov:activity": "rave:act_observations",
+            "prov:entity": "rave:fits_orig"
+        }
+    },
+    "wasInfluencedBy": {
+        "_:8": {
+            "prov:influencee": "rave:act_observations",
+            "prov:influencer": "rave:act_observation_UK-SCHM_20121220_143027",
+            "voprov:votype": "voprov:hadStep"
+        }
+    }
+}

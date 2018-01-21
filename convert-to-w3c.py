@@ -182,8 +182,6 @@ def main():
                 # if this is a parameter class, look for corresponding ParameterDescription!
                 # and copy the attributes here (except id of the parameterDescription)
                 if classname == 'parameter':
-                    num_param += 1
-
                     description_id = vo_data[classname][instance]['voprov:description']
                     for vo_name in vo_data['parameterDescription'][description_id]:
                         if vo_name != 'voprov:id':
@@ -205,6 +203,7 @@ def main():
                     w3c_data['used'][used_id]['prov:entity'] = instance
                     w3c_data['used'][used_id]['prov:role'] = 'voprov:parameter'
 
+                    num_param += 1
         else:
             # Assume, that no special mapping is needed, just copy everything
             if classname == 'parameterDescription':
