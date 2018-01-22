@@ -1,0 +1,80 @@
+{
+    "entity": {
+        "rave:fits_orig": {
+            "voprov:id": "rave:fits_orig", 
+            "voprov:name": "Original fits", 
+            "voprov:type": "prov:collection", 
+            "voprov:annotation": "Original RAVE DR4 fits files", 
+            "voprov:rights": "voprov:secure", 
+            "custom:datatype": "directory", 
+            "custom:storageLocation": "corvus.aip.de:/store/01/Data_RAVE_s/RAVE_ORIG"
+        }, 
+        "rave:0645m522I0056_fits": {
+            "voprov:id": "rave:0645m522I0056_fits", 
+            "voprov:name": "0645m522I0056.fits", 
+            "voprov:rights": "voprov:secure", 
+            "voprov:description": "rave:edesc_rawobsspectrum", 
+            "custom:datatype": "image, fits"
+        }
+    }, 
+    "agent": {
+        "org:rave": {
+            "voprov:id": "org:rave", 
+            "voprov:name": "RAVE organization", 
+            "voprov:type": "voprov:Organization", 
+            "voprov:annotation": "RAVE project, https://www.rave-survey.org/"
+        }
+    }, 
+    "wasGeneratedBy": {
+        "_:33": {
+            "voprov:entity": "rave:fits_orig", 
+            "voprov:activity": "rave:act_observations"
+        }
+    }, 
+    "wasAssociatedWith": {
+        "_:0": {
+            "voprov:activity": "rave:act_observations", 
+            "voprov:agent": "org:rave"
+        }
+    }, 
+    "wasAttributedTo": {
+        "_:0": {
+            "voprov:entity": "rave:fits_orig", 
+            "voprov:agent": "org:rave"
+        }
+    }, 
+    "hadMember": {
+        "_:6": {
+            "voprov:collection": "rave:fits_orig", 
+            "voprov:entity": "rave:0645m522I0056_fits"
+        }
+    }, 
+    "activityFlow": {
+        "rave:act_observations": {
+            "voprov:id": "rave:act_observations", 
+            "voprov:name": "RAVE Observations", 
+            "voprov:type": "obs:Observation", 
+            "voprov:annotation": "RAVE observations, data release 4", 
+            "voprov:startTime": "2003-04-11T14:42:16Z", 
+            "voprov:endTime": "2012-05-27T17:05:00Z", 
+            "voprov:doculink": "RAVE DR4: Kordopatis et al. 2013, AJ, 146, Issue 5, article id. 134, pp.421-451"
+        }
+    }, 
+    "entityDescription": {
+        "rave:edesc_rawobsspectrum": {
+            "voprov:id": "rave:edesc_rawobsspectrum", 
+            "voprov:name": "Raw observed spectrum", 
+            "voprov:annotation": "Fits file with raw observed spectrum", 
+            "voprov:category": "raw_data"
+        }
+    }, 
+    "prefix": {
+        "prov": "http://www.w3.org/ns/prov#", 
+        "voprov": "http://www.ivoa.net/documents/ProvenanceDM/ns/voprov/", 
+        "custom": "http://www.ivoa.net/documents/ProvenanceDM/ns/custom/", 
+        "xsd": "http://www.w3.org/2000/10/XMLSchema#", 
+        "rave": "http://www.rave-survey.org/prov/", 
+        "org": "http://www.ivoa.net/documents/ProvenanceDM/ns/org/", 
+        "vo": "http://www.ivoa.net/documents/ProvenanceDM/ns/vo"
+    }
+}

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import argparse
 import json
 from pprint import pprint
@@ -93,9 +94,22 @@ ATTRIBUTE_MAPPING = {
     'wasInformedBy': {
         'voprov:informed': 'prov:informed',
         'voprov:informant': 'prov:informant'
+    },
+    'activityDescription': {
+        'voprov:name': 'voprov:desc_name',
+        'voprov:type': 'voprov:desc_type',
+        'voprov:subtype': 'voprov:desc_subtype',
+        'voprov:annotation': 'voprov:desc_annotation',
+        'voprov:doculink': 'voprov:desc_doculink',
+        'voprov:code': 'voprov:desc_code',
+        'voprov:version': 'voprov:desc_version',
+    },
+    'entityDescription': {
+        'voprov:name': 'voprov:desc_name',
+        'voprov:annotation': 'voprov:desc_annotation',
+        'voprov:category': 'voprov:desc_category',
+        'voprov:doculink': 'voprov:desc_doculink'
     }
-    # TODO: mapping for descriptions!
-    # 2-step process? 1.: combine descriptions with main class, 2.: convert to w3c
 }
 
 # Some classes need to be rewritten as well
@@ -158,11 +172,16 @@ def main():
         if w3c_classname in w3c_data:
             pass
         else:
-            if classname != 'parameterDescription':
+            if classname not in ['parameterDescription', 'activityDescription', 'entityDescription']:
                 w3c_data[w3c_classname] = {}
 
         # map attributes, if available
-        if w3c_classname in ATTRIBUTE_MAPPING:
+        if classname in ['parameterDescription', 'activityDescription', 'entityDescription']:
+
+            # skip it
+            print("  - skipping %s, because it's included in corresponding main class instead" % classname)
+            pass
+        elif w3c_classname in ATTRIBUTE_MAPPING:
             for instance in vo_data[classname]:
                 w3c_data[w3c_classname][instance] = {}
                 for vo_name in vo_data[classname][instance]:
@@ -204,15 +223,38 @@ def main():
                     w3c_data['used'][used_id]['prov:role'] = 'voprov:parameter'
 
                     num_param += 1
+
+                # if this is an activity, get corresponding activityDescription attributes as well
+                if classname == 'activity':
+                    if 'voprov:description' in vo_data[classname][instance]:
+                        description_id = vo_data[classname][instance]['voprov:description']
+                        for vo_name in vo_data['activityDescription'][description_id]:
+                            if vo_name != 'voprov:id':
+                                if vo_name in ATTRIBUTE_MAPPING['activityDescription']:
+                                    w3c_name = ATTRIBUTE_MAPPING['activityDescription'][vo_name]
+                                else:
+                                    w3c_name = vo_name
+
+                                w3c_data[w3c_classname][instance][w3c_name] = vo_data['activityDescription'][description_id][vo_name] # TODO: Should use a converted value, if needed!
+
+                # if this is an entity, get corresponding entityDescription attributes as well
+                if classname == 'entity':
+                    if 'voprov:description' in vo_data[classname][instance]:
+                        description_id = vo_data[classname][instance]['voprov:description']
+                        for vo_name in vo_data['entityDescription'][description_id]:
+                            print('vo_name ', vo_name)
+                            if vo_name != 'voprov:id':
+                                if vo_name in ATTRIBUTE_MAPPING['entityDescription']:
+                                    w3c_name = ATTRIBUTE_MAPPING['entityDescription'][vo_name]
+                                else:
+                                    w3c_name = vo_name
+
+                                w3c_data[w3c_classname][instance][w3c_name] = vo_data['entityDescription'][description_id][vo_name] # TODO: Should use a converted value, if needed!
+
+
         else:
-            # Assume, that no special mapping is needed, just copy everything
-            if classname == 'parameterDescription':
-                # skip it
-                print("  - skipping parameterDescription, because it's included in parameter entity instead")
-                pass
-            else:
-                print("   Warning: No mapping found for class %s. Will just assume that no conversion is needed and copy everything." % classname)
-                w3c_data[classname] = vo_data[classname]
+            print("   Warning: No mapping found for class %s. Will just assume that no conversion is needed and copy everything." % classname)
+            w3c_data[classname] = vo_data[classname]
 
     # write to json file
     with open(outfilename, 'w') as outfile:
